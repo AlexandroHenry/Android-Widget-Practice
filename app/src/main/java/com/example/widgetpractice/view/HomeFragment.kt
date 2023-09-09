@@ -1,5 +1,6 @@
 package com.example.widgetpractice.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,8 @@ class HomeFragment: Fragment(), OnClickListener {
 
         // 버튼 리스너 달기
         binding.dropdownBtn.setOnClickListener(this)
+        binding.recyclerBtn.setOnClickListener(this)
+        binding.calculatorBtn.setOnClickListener(this)
 
         return binding.root
     }
@@ -33,6 +36,19 @@ class HomeFragment: Fragment(), OnClickListener {
             binding.dropdownBtn -> {
                 findNavController().navigate(R.id.action_homeFragment_to_dropdownFragment)
             }
+            binding.recyclerBtn -> {
+                findNavController().navigate(R.id.action_homeFragment_to_recyclerviewFragment)
+            }
+            binding.calculatorBtn -> {
+                openCalculator()
+            }
         }
+    }
+
+    private fun openCalculator() {
+        val intent = Intent(Intent.ACTION_MAIN)
+//        intent.setPackage("com.android.calculator2")
+        intent.setPackage("com.android.chrome")
+        startActivity(intent)
     }
 }

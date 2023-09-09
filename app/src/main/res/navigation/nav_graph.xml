@@ -12,11 +12,20 @@
         <action
             android:id="@+id/action_homeFragment_to_dropdownFragment"
             app:destination="@id/dropdownFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recyclerviewFragment"
+            app:destination="@id/recyclerviewFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/dropdownFragment"
         android:name="com.example.widgetpractice.view.SpinnerFragment"
         tools:layout="@layout/fragment_spinner"/>
+
+    <fragment
+        android:id="@+id/recyclerviewFragment"
+        android:name="com.example.widgetpractice.view.RecyclerFragment"
+        android:label="RecyclerviewFragment"
+        tools:layout="@layout/fragment_recycler"/>
 
 </navigation>

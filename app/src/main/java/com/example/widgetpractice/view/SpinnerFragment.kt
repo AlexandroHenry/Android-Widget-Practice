@@ -34,7 +34,7 @@ class SpinnerFragment: Fragment() {
         binding.spinner1.adapter = adapter
 
         // 스피너에서 항목을 선택했을 때 이벤트 처리
-        binding.spinner1.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+        binding.spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedValue = spinnerList[position]
                 // 선택한 값을 변수에 저장
@@ -44,7 +44,7 @@ class SpinnerFragment: Fragment() {
                 selectedValue = null
                 // 아무것도 선택되지 않았을 때 변수를 초기화
             }
-        })
+        }
 
         return binding.root
     }
